@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Vite App</title>
+  </head>
+ 
+   
+<body>
+<div class="main">
+  <header>
+    <h1 class="title">Heads Up Poker</h1>
+  </header>
+
+<div class="container" id="box">
+   <h2 class="message">Are you ready to play?</h2>
+  <div class="options">
+   <button class="left" id="yes">Yes</button>
+   <button class="right" id="no">No</button>
+  </div>
+</div>  
+  
+<div class="table">
+  <div class="bank">
+   <div class="bank-bg" id="playerbank">Your Bank Account: $<span id="playercash"></span></div>
+   <div class="bank-bg" id="opponentbank">Opponent Bank Account: $<span id="opponentcash"></span></div>
+  </div>
+  <div class="player hand">
+    <div class="card first" id="cardp1"><span class="cardText" id="p1"></span></div>
+    <div class="card second" id="cardp2"><span class="cardText" id="p2"></span></div>
+  </div>
+  <div class="opponent hand">
+    <div class="card first" id="cardo1"><span class="cardText" id="o1"></span></div>
+    <div class="card second" id="cardo2"><span class="cardText" id="o2"></span></div>
+  </div>
+  <div class="community ">
+    <div class="card flop one" id="cardr1"><span class="cardText" id="r1"></span></div>
+    <div class="card flop two" id="cardr2"><span class="cardText" id="r2"></span></div>
+    <div class="card flop three" id="cardr3"><span class="cardText" id="r3"></span></div>
+    <div class="card turn four" id="cardr4"><span class="cardText" id="r4"></span></div>
+    <div class="card river five" id="cardr5"><span class="cardText" id="r5"></span></div>
+  </div>
+</div>
+<div class="reset">
+  <button>Reset</button>
+</div>
+</div>
+
+
+
+
+    
+    
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
