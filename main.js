@@ -109,7 +109,7 @@ deck1.setup()
     mydiv.style.display = "";
     options.style.display = "none";
     message.innerHTML = "Ok fine, dont play with me :(  \n\n Game Over" 
-    mydiv.style.height = "5em";
+    mydiv.style.height = "6em";
     mydiv.style.padding = "1em";
  });
 
@@ -1697,6 +1697,7 @@ function placeBet (){   //Place your bets
       mydiv.style.display = "";
       options.style.display = "none";
       message.innerHTML = "Placing Bets...."
+      message.style.fontSize = "2em";
       player1.bet()
       playerBank.innerHTML = player1.bankaccount
       opponent.bet()
@@ -1724,8 +1725,9 @@ function findWinner(){   //who wins the round?
   }else{
     mydiv.style.display = "";
     options.style.display = "none";
-    mydiv.style.height = "6em";
-    message.innerHTML = "Sorry, your opponent won round " + roundNum + " !"
+    mydiv.style.height = "7em";
+    mydiv.style.width = "35em";
+    message.innerHTML = "Sorry, your opponent won <br> round " + roundNum + " !"
     opponent.win()
     playerBank.innerHTML = player1.bankaccount
     opponentBank.innerHTML = opponent.bankaccount
@@ -1739,6 +1741,8 @@ function nextRound(){
     roundNum++;
     message.innerHTML = "Would you like to play the next round?"
     mydiv.style.height = "";
+    mydiv.style.width = "40em";
+    message.style.fontSize = "1.6em";
     options.style.display = "";
     mydiv.style.display = "block"
     //gameStart();
@@ -1764,13 +1768,14 @@ setTimeout(() => {
   mydiv.style.display = "";
   options.style.display = "none";
   message.innerHTML = "Round " + roundNum
-  mydiv.style.height = "5em";
+  message.style.fontSize = "2.1em";
+  mydiv.style.height = "6em";
 }, 500);
 setTimeout(() => {
   mydiv.style.display = "";
   options.style.display = "none";
   message.innerHTML = "Dealing...."
-  mydiv.style.height = "5em";
+  mydiv.style.height = "6em";
 }, 1500);
 setTimeout(() => {
   mydiv.style.display = "none";
