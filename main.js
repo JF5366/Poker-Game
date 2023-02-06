@@ -1721,7 +1721,7 @@ function findWinner(){   //who wins the round?
     player1.win()
     playerBank.innerHTML = player1.bankaccount
     opponentBank.innerHTML = opponent.bankaccount
-    //console.log(1)
+    console.log(1)
   }else{
     mydiv.style.display = "";
     options.style.display = "none";
@@ -1731,33 +1731,47 @@ function findWinner(){   //who wins the round?
     opponent.win()
     playerBank.innerHTML = player1.bankaccount
     opponentBank.innerHTML = opponent.bankaccount
-    //console.log(2)
+    console.log(2)
   }
 }
-
-
-function nextRound(){
-  if(player1.bankaccount > 0){
-    roundNum++;
-    message.innerHTML = "Would you like to play the next round?"
-    mydiv.style.height = "";
-    mydiv.style.width = "40em";
-    message.style.fontSize = "1.6em";
-    options.style.display = "";
-    mydiv.style.display = "block"
-    //gameStart();
-  }
-}
-
-
-
 
 //Game Over
 function gameOver(){
   mydiv.style.display = "";
   options.style.display = "none";
-  message.innerHTML = "Sorry, you have run out of money. Game over. You lost."
+  message.innerHTML = "Sorry, you have ran out of money. <br> Game over."
 }
+
+//Win Game
+function gameWin(){
+  mydiv.style.display = "";
+  options.style.display = "none";
+  message.innerHTML = "You took all your opponent's <br> money! You Win!!."
+}
+
+function nextRound(){
+  if(opponent.bankaccount <= 0){
+    gameWin();
+  }else{
+    if(player1.bankaccount > 0){
+      roundNum++;
+      message.innerHTML = "Would you like to play the next round?"
+      mydiv.style.height = "";
+      mydiv.style.width = "40em";
+      message.style.fontSize = "1.6em";
+      options.style.display = "";
+      mydiv.style.display = "block"
+      //gameStart();
+    }
+    else{
+      gameOver()
+    }
+  }
+}
+
+
+
+
 
 
 //Gameplay via timeouts calling the different functions
@@ -1788,11 +1802,11 @@ setTimeout(() => {
   mydiv.style.display = "none";
 }, 6000);
 setTimeout(() => {
-  findWinner()
+  findWinner();
 }, 8000);
 setTimeout(() => {
   nextRound()
-}, 12000);
+}, 11000);
 }
 mybtn.addEventListener('click', () => {
   gameStart();
